@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Member {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +21,9 @@ public class Member {
     @Column(nullable = false)
     private String password;
 
+    @Builder
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
 }
