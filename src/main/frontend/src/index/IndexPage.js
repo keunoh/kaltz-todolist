@@ -50,9 +50,14 @@ const IndexPage = () => {
         <button>submit</button>
       </form>
 
-      <div className="mydiv d1"></div>
+      <div className="mydiv d1">
+        <div className="green"></div>
+      </div>
       <div className="mydiv d2"></div>
-      <div className="mydiv d3"></div>
+      <div className="mydiv d3">
+        <div className="darkcyan"></div>
+      </div>
+      <div className="mydiv d4"></div>
     </div>
   );
 };

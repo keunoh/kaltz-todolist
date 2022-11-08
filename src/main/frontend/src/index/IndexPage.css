@@ -17,4 +17,29 @@ div {
 
 .d3 {
     background-color: darkmagenta;
+    position: relative;
+}
+
+.d4 {
+    background-color: darkgray;
+    position: absolute;
+    left: 0px;
+    opacity: 0.4;
+}
+
+.green {
+    background-color: green;
+    width:75px;
+    height:75px;
+    position: relative;
+    top:35px;
+}
+
+.darkcyan {
+    background-color: darkcyan;
+    width:75px;
+    height:75px;
+    position: absolute;
+    right:0px;
+    bottom:0px;
 }
