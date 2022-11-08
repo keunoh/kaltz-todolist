@@ -22,6 +22,7 @@ public class MemberFormServlet extends HttpServlet {
     private ObjectMapper objectMapper = new ObjectMapper();
     private AppConfig appConfig = new AppConfig();
     private MemberService memberService = appConfig.memberService();
+    private static Long memberPk = 0L;
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +35,7 @@ public class MemberFormServlet extends HttpServlet {
 
         MemberData memberData = objectMapper.readValue(messageBody, MemberData.class);
 
-        Member member = new Member(1L, memberData.getName(), memberData.getPassword());
+        Member member = new Member(++memberPk, memberData.getName(), memberData.getPassword());
         memberService.join(member);
 
         System.out.println("member.name = " + memberData.getName());
@@ -43,6 +44,7 @@ public class MemberFormServlet extends HttpServlet {
         Member storedMember = memberService.findMember(1L);
 
         response.getWriter().write("ok" + "\n");
+        response.getWriter().write("memberPK : " + storedMember.getId() + "\n");
         response.getWriter().write("memberName : " + storedMember.getName() + "\n");
         response.getWriter().write("password : " + storedMember.getPassword() + "\n");
 
