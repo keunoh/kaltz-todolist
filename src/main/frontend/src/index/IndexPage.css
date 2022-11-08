@@ -43,3 +43,29 @@ div {
     right:0px;
     bottom:0px;
 }
+
+
+
+.s1 {
+    background-color: cornflowerblue;
+}
+
+.s2 {
+    background-color: darkblue;
+}
+
+.s3 {
+    background-color: deeppink;
+}
+
+.s4 {
+    background-color: lightgreen;
+}
+
+.index-section {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 60vh;
+    top:150px;
+}
