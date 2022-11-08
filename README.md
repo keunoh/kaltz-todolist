@@ -1,4 +1,3 @@
-# kaltz-todolist
 Let's write to do list 🎫
 
 - Spring & React build 참고 사이트  
