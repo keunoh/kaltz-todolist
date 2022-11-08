@@ -16,7 +16,7 @@ const request = async (options) => {
 
 export function join(joinMemberData) {
   return request({
-    url: "http://localhost:8989/members/form",
+    url: "/members/form",
     method: "POST",
     body: JSON.stringify(joinMemberData),
   });
