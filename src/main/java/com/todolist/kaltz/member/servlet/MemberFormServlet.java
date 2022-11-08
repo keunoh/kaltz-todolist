@@ -41,10 +41,9 @@ public class MemberFormServlet extends HttpServlet {
 
         Member storedMember = memberService.findMember(1L);
 
-        response.getWriter().write("ok" + "\n");
-        response.getWriter().write("memberPK : " + storedMember.getId() + "\n");
-        response.getWriter().write("memberName : " + storedMember.getName() + "\n");
-        response.getWriter().write("password : " + storedMember.getPassword() + "\n");
+        String result = objectMapper.writeValueAsString(storedMember);
+
+        response.getWriter().write(result);
 
     }
 }
