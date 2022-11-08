@@ -1,5 +1,20 @@
+div {
+    display: flex;
+}
+
 .mydiv {
     width: 150px;
     height: 150px;
-    background-color: cadetblue;
+}
+
+.d1 {
+    background-color: coral;
+}
+
+.d2 {
+    background-color: darkkhaki;
+}
+
+.d3 {
+    background-color: darkmagenta;
 }
