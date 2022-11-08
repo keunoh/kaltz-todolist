@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.todolist.kaltz.AppConfig;
 import com.todolist.kaltz.member.Member;
 import com.todolist.kaltz.member.MemberService;
-import com.todolist.kaltz.member.MemberServiceImpl;
 import org.springframework.util.StreamUtils;
 
 import javax.servlet.ServletException;
@@ -22,7 +21,6 @@ public class MemberFormServlet extends HttpServlet {
     private ObjectMapper objectMapper = new ObjectMapper();
     private AppConfig appConfig = new AppConfig();
     private MemberService memberService = appConfig.memberService();
-    private static Long memberPk = 0L;
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,7 +33,7 @@ public class MemberFormServlet extends HttpServlet {
 
         MemberData memberData = objectMapper.readValue(messageBody, MemberData.class);
 
-        Member member = new Member(++memberPk, memberData.getName(), memberData.getPassword());
+        Member member = new Member(1L, memberData.getName(), memberData.getPassword());
         memberService.join(member);
 
         System.out.println("member.name = " + memberData.getName());

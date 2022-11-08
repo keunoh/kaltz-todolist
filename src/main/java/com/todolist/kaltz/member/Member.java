@@ -2,7 +2,6 @@ package com.todolist.kaltz.member;
 
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
