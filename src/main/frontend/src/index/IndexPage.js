@@ -58,6 +58,12 @@ const IndexPage = () => {
         <div className="darkcyan"></div>
       </div>
       <div className="mydiv d4"></div>
+
+      <div className="mydiv s1"></div>
+      <div className="mydiv s2"></div>
+      <div className="mydiv s3"></div>
+      <div className="mydiv s4"></div>
+      <section className="index-section"></section>
     </div>
   );
 };
