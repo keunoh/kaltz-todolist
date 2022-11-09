@@ -33,7 +33,7 @@ public class MemberFormServlet extends HttpServlet {
 
         MemberData memberData = objectMapper.readValue(messageBody, MemberData.class);
 
-        Member member = new Member(1L, memberData.getName(), memberData.getPassword());
+        Member member = new Member(memberData.getName(), memberData.getPassword());
         memberService.join(member);
 
         System.out.println("member.name = " + memberData.getName());
