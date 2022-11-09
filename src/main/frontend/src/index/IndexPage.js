@@ -1,26 +1,18 @@
+import { getHeaders } from "../utils/APIUtils";
 import "./IndexPage.css";
-import { useState } from "react";
-import { join } from "../utils/APIUtils";
 
 const IndexPage = () => {
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-
-  const joinHandleSubmit = (e) => {
+  const headerPage = (e) => {
     e.preventDefault();
+    console.log("clicked!");
 
-    let joinMemberData = {
-      name: name,
-      password: password,
-    };
-
-    join(joinMemberData)
+    getHeaders()
       .then((response) => {
-        console.log("Join Success");
+        console.log("method success");
         console.log(response);
       })
       .catch((error) => {
-        console.log("Join Fail");
+        console.log("failed");
         console.log(error);
       });
   };
@@ -28,27 +20,6 @@ const IndexPage = () => {
   return (
     <div>
       <h1>hello! from React!</h1>
-
-      <form onSubmit={joinHandleSubmit}>
-        <label htmlFor="name">ID : </label>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-
-        <label htmlFor="password">PW : </label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button>submit</button>
-      </form>
 
       <div className="mydiv d1">
         <div className="green"></div>
@@ -63,7 +34,9 @@ const IndexPage = () => {
       <div className="mydiv s2"></div>
       <div className="mydiv s3"></div>
       <div className="mydiv s4"></div>
-      <section className="index-section"></section>
+      <section className="index-section">
+        <button onClick={headerPage}>header infromation</button>
+      </section>
     </div>
   );
 };
