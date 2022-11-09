@@ -21,3 +21,10 @@ export function join(joinMemberData) {
     body: JSON.stringify(joinMemberData),
   });
 }
+
+export function getHeaders() {
+  return request({
+    url: "/headers",
+    method: "GET",
+  });
+}
