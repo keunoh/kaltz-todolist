@@ -19,7 +19,7 @@ const IndexPage = () => {
 
   return (
     <div>
-      <h1>hello! from React!</h1>
+      <h1>React view</h1>
 
       <div className="mydiv d1">
         <div className="green"></div>
